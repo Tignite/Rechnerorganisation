@@ -20,9 +20,9 @@ main:
 	 # Insert your code here! #
 	 ##########################
 	 
-	 addi 	 $t0, $t0, 0		# const 0
-	 addi	 $t1, $t1, 1		# const 1
-	 slti	 $s1, $s0, 1		# Eingabe < 1  ?
+	 add	 $t0, $zero, $zero		# const 0
+	 addi	 $t1, $zero, 1		# const 1
+	 slti	 $s1, $s0, 0		# Eingabe < 1  ?
 	 beq	 $s1, $t1, negativ	# negativ -> setze -1 und beende
 	 slti	 $s1, $s0, 13		# Eingabe < 13 ?
 	 beq	 $s1, $t0, subtract # s1 = 0, subtrahiere 1 und beende
