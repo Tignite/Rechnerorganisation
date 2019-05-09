@@ -2,7 +2,7 @@
 	.text
     .globl main
 main:
-    addi  $sp,  $sp, -4      # save stack space for registers
+    addiu  $sp,  $sp, -4      # save stack space for registers
     sw    $ra,  0($sp)       # speicher rücksprung Adresse
     
     move    $fp,    $sp      #  beginn merken
@@ -18,7 +18,7 @@ main:
     jal   sortValues
     jal   printValues        # to screen
     lw    $ra,  0($sp)       # restore return address
-    addi  $sp,  $sp, 4       # restore stack pointer
+    addiu  $sp,  $sp, 4       # restore stack pointer
     jr    $ra
 	 
 # Routinen fÃ¼r Ein- und Ausgabe	 
@@ -50,7 +50,7 @@ loop_1:
     addi    $t0,    -1       # t0--
     j       loop_1
 end_read:
-    addi    $a0,    +40      # fp' dekrementieren
+    addiu    $a0,    +40      # fp' dekrementieren
     jr      $t9              # Springe ins Hp
 ###########################################################################################################
 ###########################################################################################################
@@ -94,7 +94,7 @@ end99:
     
     ######im schlächtesten fall 9 durch gehen#####
 end_sort:
-    addi    $a0,    +40      # fp' dekrementieren
+    addiu    $a0,    +40      # fp' dekrementieren
     jr      $t9              # Springe ins Hp
 
 ##########################################################################################################
@@ -109,7 +109,7 @@ loop_3:
     lb      $a0,    $t8      # läde aktuelles Int in a0
     jal     printValues      # gibt Wert in a0 wieder
            
-    addi    $t8,    -4       # fp' dekrementieren
+    addiu    $t8,    -4       # fp' dekrementieren
     addi    $t0,    -1       # t0--
     j       loop_3    
 
