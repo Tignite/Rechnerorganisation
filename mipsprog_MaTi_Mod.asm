@@ -1,7 +1,7 @@
   .text
     .globl main
 main:
-    addi 	$sp, $sp, -12       # Stack-Pointer-12
+    addiu 	$sp, $sp, -12       # Stack-Pointer-12
     sw    	$ra, 8($sp)         # $sp+8=$ra merkt sich ra an letzter stelle
 	sw      $fp, 4($sp)		    # $sp+4=fp (frame pointer), merkt sich fp an vorletzter stelle
 	sw    	$v0, 0($sp)         # Oberste stelle v0
